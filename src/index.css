@@ -1,3 +1,44 @@
 body {
-  background-color: whitesmoke;
+  background-color: rgb(241, 208, 163);
+  font-family: "Righteous";
+  margin: 60px;
+}
+
+.header-text {
+  padding-bottom: 50px;
+  font-size : 48px;
+  text-align: center;
+  color :rgb(255, 255, 255)
+}
+
+.header-bg {
+  padding-top: -60px;
+  height: 200px;
+  width: 100%;
+  background-color: black;  
+}
+
+.topic {
+  font-size: 36px;
+}
+
+.add_btn {
+  max-height: 100px;
+  max-width: 100px;
+  background-color: green;
+  border-radius: 10%;
+  border-style: solid;
+  border-color: greenyellow;
+  color : white;
+  padding: 16px;
+
+}
+
+.calculate_btn {
+  color: white;
+  background-color: red;
+  border-radius: 10%;
+  border-style: 10px solid;
+  border-color: orange;
+  padding: 16px;
 }

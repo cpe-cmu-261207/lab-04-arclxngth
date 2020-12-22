@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { CourseCard } from "./components";
+import { CourseCard } from "./components/CourseCard";
+
 function App() {
   const grade = ["A", "B+", "B", "C+", "C", "D+", "D", "F", "W"];
   const credit = [1, 2, 3];
@@ -14,6 +15,7 @@ function App() {
    */
   function calculateGPA() {
     // TODO
+    
   }
 
   /**
@@ -39,16 +41,35 @@ function App() {
   }
 
   return (
-    <div className="container mx-auto h-screen">
-      <h1 className="text-center text-4xl p-3 tracking-widest">
-        GPA CALCULATOR
-      </h1>
-      <div className="h-2/3 md:w-2/4 p-3 rounded-lg mx-auto overflow-auto">
-        <h1 className="text-2xl my-3">My courses</h1>
+    <div>
+      <div className="header-bg">
+        <h1 className="header-text">
+          GPA CALCULATOR
+        </h1>
+      </div>
+      <div>
+        <h1 className="topic">My courses</h1>
         {/* TODO display courses */}
+        
       </div>
       {/* TODO add course input form */}
+      <div>
+        <label className="topic">grade</label>
+        <input type="text"></input>
+        <label></label>
+      </div>
+      <div>
+        <button type="submit" className="add_btn">
+          add
+        </button>
+        <button type="submit" className="calculate_btn">
+          calculate
+        </button>
+      </div>
       {/* TODO display calculated GPA */}
+      <div>
+        <li id="summaryGPA"></li>
+      </div>
     </div>
   );
 }
