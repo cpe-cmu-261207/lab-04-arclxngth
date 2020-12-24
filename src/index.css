@@ -1,44 +1,101 @@
 body {
   background-color: rgb(241, 208, 163);
   font-family: "Righteous";
-  margin: 60px;
+  margin: 0;
 }
 
-.header-text {
-  padding-bottom: 50px;
-  font-size : 48px;
+.header {
+  padding: 150px;
+  font-size: 72px;
   text-align: center;
-  color :rgb(255, 255, 255)
-}
-
-.header-bg {
-  padding-top: -60px;
-  height: 200px;
+  color: white;
+  height: 400px;
   width: 100%;
-  background-color: black;  
+  background-color: rgb(17, 26, 66);  
+  margin-bottom: 40px;
 }
 
 .topic {
-  font-size: 36px;
+  font-size: 48px;
 }
 
 .add_btn {
-  max-height: 100px;
-  max-width: 100px;
   background-color: green;
-  border-radius: 10%;
-  border-style: solid;
-  border-color: greenyellow;
-  color : white;
-  padding: 16px;
-
+  border: 2px solid greenyellow;
 }
 
-.calculate_btn {
-  color: white;
+.clear_btn {
   background-color: red;
+  border: 2px solid orange;
+}
+
+.content {
+  padding: 50px;
+  height: 500px;
+  max-width: 60%;
+  margin: 0 auto;
+  background-color: orange;
+  border-radius: 20px;
+  overflow: auto;
+}
+
+.form {
+  margin: 100px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.form-txt {
+  padding: 10px;
+  width: 150px;
+  height: 35px;
+  border: 2px solid blue;
+  border-radius: 10px;
+}
+
+.btn {
+  font-size: 28px;
+  height: 100px;
+  width: 200px;
   border-radius: 10%;
-  border-style: 10px solid;
-  border-color: orange;
   padding: 16px;
+  color: white;
+}
+
+.form-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 20px;
+  color: white;
+  margin: 10px;
+  padding: 10px;
+}
+
+.renGPA {
+  font-size: 72px;
+  margin: 20px;
+}
+
+.btn-1 {
+  background-color: rgb(40, 138, 141)
+}
+
+.btn-2 {
+  background-color: rgb(99, 129, 42)
+}
+
+.btn-3 {
+  background-color: rgb(155, 22, 22);
+}
+
+select {
+  width: 150px;
+  height: 35px; 
+}
+
+.aside {
+  display: flex;
+  align-items: center;
+  
 }
