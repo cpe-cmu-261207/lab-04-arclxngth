@@ -31,8 +31,13 @@ body {
 }
 
 .clear_btn {
-  background-color: red;
+  transition: 0.4s;
+  background-color: grey;
   border: 2px solid orange;
+}
+
+.clear_btn:hover {
+  background-color: red;
 }
 
 .content {
