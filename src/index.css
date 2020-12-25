@@ -17,11 +17,17 @@ body {
 
 .topic {
   font-size: 48px;
+  width: 300px;
 }
 
 .add_btn {
-  background-color: green;
+  transition: 0.4s;
+  background-color: grey;
   border: 2px solid greenyellow;
+}
+
+.add_btn:hover {
+  background-color: rgb(53, 117, 40)
 }
 
 .clear_btn {
@@ -32,7 +38,7 @@ body {
 .content {
   padding: 50px;
   height: 500px;
-  max-width: 60%;
+  max-width: 80%;
   margin: 0 auto;
   background-color: orange;
   border-radius: 20px;
@@ -46,9 +52,10 @@ body {
 }
 
 .form-txt {
+  font-size: 20px;
   padding: 10px;
-  width: 150px;
-  height: 35px;
+  width: 200px;
+  height: 50px;
   border: 2px solid blue;
   border-radius: 10px;
 }
@@ -96,6 +103,23 @@ select {
 
 .aside {
   display: flex;
-  align-items: center;
-  
+  align-items: center; 
+}
+
+/* ---------- CourseCard ------------ */
+
+.del_btn {
+  height: 32px;
+  width: 32px;
+  font-size: 20px;
+  color: white;
+  background-color: red;
+  border: 3px solid orange;
+  border-radius: 50%;
+}
+
+.information {
+  font-size: 28px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }

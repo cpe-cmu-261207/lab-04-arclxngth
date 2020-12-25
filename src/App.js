@@ -31,8 +31,11 @@ function App() {
     let score = 0,
       sum_credit = 0;
     myCourses.forEach((value) => {
-      score += value.grade;
-      sum_credit += value.credit;
+      if(value.grade == "-1") ;
+      else{
+        score += value.grade * value.credit;
+        sum_credit += value.credit;
+      }
     });
 
     let gpa = score / sum_credit;
@@ -50,11 +53,16 @@ function App() {
   function addCourse(event) {
     event.preventDefault();
     // TODO
-    let port = new MyCourses(id, "A", credit);
-    setMyCourse([...myCourses, port]);
+    if(id === "" || grade == "" || credit == 0){
+      alert("Please input all data");
+    }
+    else{
+      let port = new MyCourses(id, 4, credit);
+      setMyCourse([...myCourses, port]);
 
-    // recalculate GPA
-    calculateGPA();
+      // recalculate GPA
+      calculateGPA();
+    }
   }
 
   function renderCourse() {
@@ -64,6 +72,7 @@ function App() {
           course_id={value.id}
           grade={value.grade}
           credit={value.credit}
+          onDeleteCourse={onDeleteCourse}
           key={Math.random()}
         />
       );
@@ -77,14 +86,13 @@ function App() {
    */
   function onDeleteCourse(id) {
     // TODO
+    setMyCourse(myCourses.filter((value) => value.id !== id))
   }
 
   function clearCourse(event){
     event.preventDefault();
     
     setMyCourse([]);
-
-    calculateGPA();
   }
 
   return (
@@ -114,8 +122,8 @@ function App() {
               </aside>
               <aside className="aside">
                 <label className="topic">GRADE</label>
-                <select onChange={(e) => setGrade(e.target.value)}>
-                  <option select disabled>
+                <select onChange={(e) => setGrade(e.target.value)} className="form-txt">
+                  <option select>
                     select grade..
                   </option>
                   <option value="4">A</option>
@@ -129,7 +137,7 @@ function App() {
                   <option value="-1">W</option>
                 </select>
               </aside>
-              <aside>
+              <aside className="aside">
                 <label className="topic">CREDIT</label>
                 <button className="form-btn btn-1" onClick={() => setCredit(1)}>
                   1
