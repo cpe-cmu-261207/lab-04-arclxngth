@@ -7,7 +7,7 @@ export const CourseCard = (props) => {
     <div>
       <div className="information">
         <div>Course's ID : {props.course_id}</div>
-        <div>Grade : {props.grade}</div>
+        <div>Grade : {props.grade_txt}</div>
         <div>Credit : {props.credit}</div>
         <button className="del_btn" onClick={() => props.onDeleteCourse(props.course_id)}>X</button>
       </div>

@@ -82,6 +82,7 @@ body {
   color: white;
   margin: 10px;
   padding: 10px;
+  background-color: grey;
 }
 
 .renGPA {
@@ -90,14 +91,23 @@ body {
 }
 
 .btn-1 {
-  background-color: rgb(40, 138, 141)
 }
 
+.btn-1:focus {
+  background-color: rgb(197, 189, 72);
+} 
+
 .btn-2 {
-  background-color: rgb(99, 129, 42)
+}
+
+.btn-2:focus {
+  background-color: rgb(99, 129, 42);
 }
 
 .btn-3 {
+}
+
+.btn-3:focus {
   background-color: rgb(155, 22, 22);
 }
 

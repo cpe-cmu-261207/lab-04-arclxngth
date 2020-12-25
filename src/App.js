@@ -2,10 +2,11 @@ import { useState } from "react";
 import { CourseCard } from "./components/CourseCard";
 
 class MyCourses {
-  constructor(id, grade, credit) {
+  constructor(id, grade, credit, grade_txt) {
     this.id = id;
     this.grade = grade;
     this.credit = credit;
+    this.grade_txt = grade_txt;
   }
 }
 
@@ -14,12 +15,11 @@ function App() {
   // const credit = [1, 2, 3];
 
   const [myCourses, setMyCourse] = useState([]);
-  const [inputData, setInputData] = useState({});
-  const [GPA, setGPA] = useState(4.0);
 
   const [id, setId] = useState("");
   const [grade, setGrade] = useState(0);
   const [credit, setCredit] = useState(0);
+  const [grade_txt, setGrade_txt] = useState("");
 
   /**
    * Calculate the GPA of current courses
@@ -57,8 +57,26 @@ function App() {
       alert("Please input all data");
     }
     else{
-      let port = new MyCourses(id, 4, credit);
+      switch(grade){
+        case "4": setGrade_txt("A"); break;
+        case "3.5": setGrade_txt("B+"); break;
+        case "3": setGrade_txt("B"); break;
+        case "2.5": setGrade_txt("C+"); break;
+        case "2": setGrade_txt("C"); break;
+        case "1.5": setGrade_txt("D+"); break;
+        case "1": setGrade_txt("D"); break;
+        case "0": setGrade_txt("F"); break;
+        case "-1": setGrade_txt("W"); break;
+      }
+
+      console.log(grade)
+      console.log(grade_txt)
+
+      let port = new MyCourses(id, grade, credit, grade_txt);
       setMyCourse([...myCourses, port]);
+
+      setId("")
+      setCredit(0)
 
       // recalculate GPA
       calculateGPA();
@@ -70,7 +88,7 @@ function App() {
       return (
         <CourseCard
           course_id={value.id}
-          grade={value.grade}
+          grade_txt={value.grade_txt}
           credit={value.credit}
           onDeleteCourse={onDeleteCourse}
           key={Math.random()}
@@ -91,7 +109,6 @@ function App() {
 
   function clearCourse(event){
     event.preventDefault();
-    
     setMyCourse([]);
   }
 
