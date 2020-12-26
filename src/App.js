@@ -69,8 +69,6 @@ function App() {
         case "0": grade_txt = "F"; break;
         case "-1": grade_txt = "W"; break;
       }
-      console.log(grade)
-      console.log(grade_txt)
 
       let port = new MyCourses(id, grade, credit, grade_txt);
       setMyCourse([...myCourses, port]);
