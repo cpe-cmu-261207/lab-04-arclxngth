@@ -19,7 +19,6 @@ function App() {
   const [id, setId] = useState("");
   const [grade, setGrade] = useState(0);
   const [credit, setCredit] = useState(0);
-  const [grade_txt, setGrade_txt] = useState("");
 
   /**
    * Calculate the GPA of current courses
@@ -57,18 +56,19 @@ function App() {
       alert("Please input all data");
     }
     else{
-      switch(grade){
-        case "4": setGrade_txt("A"); break;
-        case "3.5": setGrade_txt("B+"); break;
-        case "3": setGrade_txt("B"); break;
-        case "2.5": setGrade_txt("C+"); break;
-        case "2": setGrade_txt("C"); break;
-        case "1.5": setGrade_txt("D+"); break;
-        case "1": setGrade_txt("D"); break;
-        case "0": setGrade_txt("F"); break;
-        case "-1": setGrade_txt("W"); break;
-      }
+      let grade_txt = "";
 
+      switch(grade){
+        case "4": grade_txt = "A"; break;
+        case "3.5": grade_txt = "B+"; break;
+        case "3": grade_txt = "B"; break;
+        case "2.5": grade_txt = "C+"; break;
+        case "2": grade_txt = "C"; break;
+        case "1.5": grade_txt = "D+"; break;
+        case "1": grade_txt = "D"; break;
+        case "0": grade_txt = "F"; break;
+        case "-1": grade_txt = "W"; break;
+      }
       console.log(grade)
       console.log(grade_txt)
 
